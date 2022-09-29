@@ -1,13 +1,19 @@
 package se331.rest.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 import se331.rest.entity.AunctionItem;
-import se331.rest.entity.Organizer;
-import se331.rest.entity.Participant;
 
-import java.util.List;
+import java.util.Optional;
 
+@Service
 public interface AunctionItemService{
-    List<AunctionItem> getAllAunctionItem();
-    Page<AunctionItem> getAunctionItem(Integer page, Integer pageSize);
+    Page<AunctionItem> getAuctionItems(Integer pageSize, Integer page);
+
+    Optional<AunctionItem> getAunctionItem(Long id);
+
+    Page<AunctionItem> getAuctionItems(String description, Integer value, Pageable pageable);
+
+    Page<AunctionItem> getAunctionItemValue(Integer value, Pageable pageable);
 }

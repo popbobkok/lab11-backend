@@ -58,12 +58,12 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         bid14 = bidRepository.save(Bid.builder().amount(20000).date("9-30-2020").build());
         bid15 = bidRepository.save(Bid.builder().amount(30000).date("9-30-2020").build());
 
-        success1 = bidRepository.save(Bid.builder().amount(15000).build());
-        success2 = bidRepository.save(Bid.builder().amount(10000).build());
-        success3 = bidRepository.save(Bid.builder().amount(30000).build());
+        success1 = bidRepository.save(Bid.builder().amount(15000).date("5-30-2020").build());
+        success2 = bidRepository.save(Bid.builder().amount(10000).date("7-30-2020").build());
+        success3 = bidRepository.save(Bid.builder().amount(30000).date("9-30-2020").build());
 
         items = aunctionItemRepository.save(AunctionItem.builder()
-                .description("Goldern Apple")
+                .description("Goldern Bottle")
                 .type("Gold")
                 .successfulBid(success1)
                 .build());
@@ -72,7 +72,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         items.getBid().add(bid3);
 
         items = aunctionItemRepository.save(AunctionItem.builder()
-                .description("Goldern Apple")
+                .description("Goldern Chair")
                 .type("Gold")
                // .successfulBid(success1)
                 .build());
@@ -81,8 +81,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         items.getBid().add(bid6);
 
         items = aunctionItemRepository.save(AunctionItem.builder()
-                .description("Goldern Apple")
-                .type("Gold")
+                .description("Sliver Mouse")
+                .type("Sliver")
                 .successfulBid(success2)
                 .build());
         items.getBid().add(bid7);
@@ -90,8 +90,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         items.getBid().add(bid9);
 
         items = aunctionItemRepository.save(AunctionItem.builder()
-                .description("Goldern Apple")
-                .type("Gold")
+                .description("Sliver Fans")
+                .type("Sliver")
                 //.successfulBid(success1)
                 .build());
         items.getBid().add(bid10);
@@ -99,7 +99,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         items.getBid().add(bid12);
 
         items = aunctionItemRepository.save(AunctionItem.builder()
-                .description("Goldern Apple")
+                .description("Goldern House")
                 .type("Gold")
                 .successfulBid(success3)
                 .build());

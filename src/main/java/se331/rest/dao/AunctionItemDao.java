@@ -7,7 +7,15 @@ import se331.rest.entity.AunctionItem;
 import java.util.Optional;
 
 public interface AunctionItemDao {
-    Page<AunctionItem> getAunctionItem(Pageable pageRequest);
-    Optional<AunctionItem> findById(Long id);
+
+    Page<AunctionItem> getAunctionItems(Integer pageSize, Integer page);
+
+
+    Optional<AunctionItem> getAunctionItem(Long id);
+
+    Page<AunctionItem> getAunctionItems(String description, Integer value, Pageable page);
+
+    Page<AunctionItem> getAunctionItemValue(Integer value, Pageable page);
 
 }
+

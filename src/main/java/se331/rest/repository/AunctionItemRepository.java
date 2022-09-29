@@ -14,6 +14,8 @@ public interface AunctionItemRepository extends JpaRepository<AunctionItem,Long>
 
     Page<AunctionItem> findByDescriptionContainingOrSuccessfulBid_AmountContaining(
             String description, Integer successfulBidValues, Pageable page);
+    Page<AunctionItem> findByDescriptionContainingOrTypeContainingOrSuccessfulBid_AmountLessThanEqual(String description, String type, Integer value, Pageable pageRequest);
 
+    Page<AunctionItem> findBySuccessfulBid_AmountLessThanEqual(Integer value, Pageable pageRequest);
 }
 
