@@ -17,12 +17,14 @@ public class AunctionItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
     Long id;
-    String location;
-    String date;
-    String succesfulBid;
+    String description;
+    String type;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "item")
     @Builder.Default
-    List<Event> ownEvents = new ArrayList<>();
+    List<Bid> bid = new ArrayList<>();
+
+    @OneToOne
+    Bid successfulBid;
 }
 

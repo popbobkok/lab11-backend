@@ -5,21 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AunctionItemDTO{
+public class BidDTO {
 
     Long id;
-    String description;
-    String type;
-    List<AunctionItemOwnEventsDTO> bids;
-
-    BidSuccessDTO successfulBid;
+    Integer amount;
+    String date;
+    AunctionItem item;
 
 }
-
